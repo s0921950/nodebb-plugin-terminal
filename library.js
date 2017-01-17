@@ -12,6 +12,9 @@ plugin.init = function(params, callback) {
 	// We create two routes for every view. One API call, and the actual route itself.
 	// Just add the buildHeader middleware to your route and NodeBB will take care of everything for you.
 
+	router.get('/terminal', hostMiddleware.buildHeader, controllers.renderPage);
+	router.get('/api/terminal', controllers.renderPage);
+
 	router.get('/admin/plugins/terminal', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
 	router.get('/api/admin/plugins/terminal', controllers.renderAdminPage);
 
@@ -39,7 +42,7 @@ plugin.addAdminNavigation = function(header, callback) {
 	header.plugins.push({
 		route: '/plugins/terminal',
 		icon: 'fa-tint',
-		name: 'terminal'
+		name: 'Terminal'
 	});
 
 	callback(null, header);
