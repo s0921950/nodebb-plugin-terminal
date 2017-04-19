@@ -1,5 +1,5 @@
 {
-	"id": "nodebb-plugin-terminal",
+	"id": "nodebb-plugin-fsc-terminal",
 	"url": "",
 	"library": "./library.js",
 	"templates": "templates",
